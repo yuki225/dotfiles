@@ -12,9 +12,18 @@ Plugin 'scrooloose/nerdtree'
 " shortcut
 nnoremap <silent><C-e> :NERDTree<CR>
 
-" setting
+" *************************nerdtree setting******************************
+" auto start
+function s:MoveToFileAtStart()
+  call feedkeys("\<Space>")
+  call feedkeys("\s")
+  call feedkeys("\l")
+endfunction
+autocmd VimEnter * NERDTree | call s:MoveToFileAtStart() 
+
+" Display hidden files
 let NERDTreeShowHidden = 1
-autocmd VimEnter : execute 'NERDTree'
+" ***********************************************************************
 
 call vundle#end()            " required
 filetype plugin indent on    " required
