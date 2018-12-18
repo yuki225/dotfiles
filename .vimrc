@@ -5,14 +5,13 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+
 " Plugin
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
-
-" Shortcut
-nnoremap <silent><C-e> :NERDTree<CR>
+Plugin 'tomtom/tcomment_vim'
 
 
  """"""""""""""""""""""""""""""
@@ -38,10 +37,11 @@ nnoremap <silent><C-e> :NERDTree<CR>
  au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
  au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
  """"""""""""""""""""""""""""""
-
  """"""""""""""""""""""""""""""""
  "nerdtree setting
  """"""""""""""""""""""""""""""""
+ " open/close nerdtree
+ nnoremap <silent><C-e> :NERDTree<CR>
  " auto start
  function s:MoveToFileAtStart()
    call feedkeys("\<Space>")
@@ -53,7 +53,6 @@ nnoremap <silent><C-e> :NERDTree<CR>
  " Display hidden files
  let NERDTreeShowHidden = 1
  """"""""""""""""""""""""""""""""
-
 
 call vundle#end()            " required
 filetype plugin indent on    " required
