@@ -26,9 +26,9 @@ nnoremap <silent><C-e> :NERDTree<CR>
  noremap <C-N> :Unite -buffer-name=file file<CR>
  " recent file list
  noremap <C-Z> :Unite file_mru<CR>
- " sources set to the current directory
+ " set sources to the current directory
  noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
- " split horizontaly
+ " split horizontally
  au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
  au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
  " split vertically
